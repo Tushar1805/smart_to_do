@@ -9,7 +9,7 @@ import 'package:mutual_funds_manager/resources/app_strings.dart';
 class HomeScreen extends HookWidget {
   const HomeScreen({super.key});
   @override
-  Widget build(BuildContext context) {
+  Widget build(final BuildContext context) {
     final counter = useState<int>(0);
     final darkTheme = useState<bool>(true);
 
@@ -70,10 +70,10 @@ class HomeScreen extends HookWidget {
                   const SizedBox(
                     width: 5,
                   ),
-                  const Icon(Icons.arrow_forward_outlined)
+                  const Icon(Icons.arrow_forward_outlined),
                 ],
               ),
-            )
+            ),
           ],
         ),
       ),

@@ -1,8 +1,5 @@
-import 'dart:ui';
-
+import 'package:core/utils/shared_extensions.dart' show HexColor;
 import 'package:flutter/material.dart';
-
-import '../../utils/shared_extensions.dart' show HexColor;
 
 Color lightBackgroundColorPurple = HexColor.fromHex('#5a31a9');
 Color lightBackgroundColorWhite = HexColor.fromHex('#00000');
@@ -13,7 +10,6 @@ Color secondaryColor = HexColor.fromHex('#041729');
 Color darkThemeSecondaryColor = HexColor.fromHex('#75E6DA');
 
 final colorScheme = ColorScheme.fromSeed(seedColor: primarycolor);
-
 
 Color primary = colorScheme.primary;
 Color onPrimary = colorScheme.onPrimary;

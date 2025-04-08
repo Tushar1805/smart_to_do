@@ -4,6 +4,7 @@ import 'package:dash_chat_2/dash_chat_2.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:mutual_funds_manager/presentation/chat/widgets/end_drawer_widget.dart';
 import 'package:mutual_funds_manager/resources/app_api_keys.dart';
 import 'package:mutual_funds_manager/resources/app_image.dart';
 
@@ -14,13 +15,15 @@ class ChatScreen extends HookWidget {
   final ChatUser _gptChatUser = ChatUser(id: '2', firstName: 'ChatGPT');
 
   @override
-  Widget build(BuildContext context) {
-    ValueNotifier<List<ChatMessage>?> _messages = useState<List<ChatMessage>>(<ChatMessage>[]);
-    final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+  Widget build(final BuildContext context) {
+    final ValueNotifier<List<ChatMessage>?> _messages =
+        useState<List<ChatMessage>>(<ChatMessage>[]);
+    final _scaffoldKey = GlobalKey<ScaffoldState>();
+
+    final size = MediaQuery.of(context).size;
     final openAI = OpenAI.instance.build(
       token: OPEN_AI_KEY,
-      baseOption: HttpSetup(
-          receiveTimeout: const Duration(seconds: 6), connectTimeout: const Duration(seconds: 6)),
+      baseOption: HttpSetup(),
       enableLog: true,
     );
 
@@ -31,7 +34,7 @@ class ChatScreen extends HookWidget {
       _typingUsers.value.add(_gptChatUser);
       // _typingUsers.value = List.from(_typingUsers.value);
 
-      List<Messages> _messageHistory = _messages.value!.map((final m) {
+      final _messageHistory = _messages.value!.map((final m) {
         if (m.user == _currentUser) {
           return Messages(role: Role.user, content: m.text);
         } else {
@@ -40,9 +43,10 @@ class ChatScreen extends HookWidget {
       }).toList();
 
       final request = ChatCompleteText(
-          messages: _messageHistory.map((m) => m.toJson()).toList(),
-          maxToken: 200,
-          model: GptTurboChatModel());
+        messages: _messageHistory.map((final m) => m.toJson()).toList(),
+        maxToken: 200,
+        model: GptTurboChatModel(),
+      );
 
       final response = await openAI.onChatCompletion(request: request);
 
@@ -66,8 +70,9 @@ class ChatScreen extends HookWidget {
 
     return Scaffold(
       key: _scaffoldKey,
-      endDrawer: Container(
-        child: Text('Hello'),
+      endDrawer: endDrawer(
+        size: size,
+        context: context,
       ),
       appBar: AppBar(
         title: Text(
@@ -96,7 +101,7 @@ class ChatScreen extends HookWidget {
               width: 30,
               height: 30,
             ),
-          )
+          ),
         ],
       ),
       body: Padding(
@@ -115,7 +120,7 @@ class ChatScreen extends HookWidget {
                         ? Colors.white
                         : Colors.black,
                   ),
-              hintText: "Write a message...",
+              hintText: 'Write a message...',
               border: InputBorder.none,
             ),
             inputTextStyle: Theme.of(context).textTheme.bodyMedium?.copyWith(
@@ -136,16 +141,14 @@ class ChatScreen extends HookWidget {
                 ? colorScheme.onPrimaryContainer
                 : colorScheme.primaryFixedDim,
             timeTextColor: colorScheme.primaryFixedDim,
-            messageTextBuilder: (message, previousMessage, nextMessage) {
-              return Text(
-                message.text,
-                style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                      color: Theme.of(context).brightness == Brightness.light
-                          ? Colors.white
-                          : Colors.black,
-                    ),
-              );
-            },
+            messageTextBuilder: (final message, final previousMessage, final nextMessage) => Text(
+              message.text,
+              style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                    color: Theme.of(context).brightness == Brightness.light
+                        ? Colors.white
+                        : Colors.black,
+                  ),
+            ),
           ),
           messageListOptions: MessageListOptions(),
           typingUsers: _typingUsers.value,

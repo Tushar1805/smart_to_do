@@ -19,21 +19,22 @@ class MyApp extends HookWidget {
   Widget build(final context) {
     final themeCubit = sl<ThemeCubit>();
 
-    useEffect(() {
-      themeCubit.getTheme();
-      return null;
-    }, []);
+    useEffect(
+      () {
+        themeCubit.getTheme();
+        return null;
+      },
+      [],
+    );
 
     return BlocBuilder<ThemeCubit, ThemeData>(
       bloc: themeCubit,
-      builder: (final context, final state) {
-        return MaterialApp.router(
-          title: appTitle,
-          debugShowCheckedModeBanner: false,
-          theme: state,
-          routerConfig: router,
-        );
-      },
+      builder: (final context, final state) => MaterialApp.router(
+        title: appTitle,
+        debugShowCheckedModeBanner: false,
+        theme: state,
+        routerConfig: router,
+      ),
     );
   }
 }

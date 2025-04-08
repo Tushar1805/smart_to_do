@@ -1,10 +1,10 @@
+import 'package:core/di/service_locator.dart';
+import 'package:core/theme/app_theme.dart';
+import 'package:core/utils/app_storage.dart';
+import 'package:core/utils/core_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:mutual_funds_manager/resources/app_keys.dart';
-import '../di/service_locator.dart';
-import '../../utils/app_storage.dart';
-import '../../utils/core_utils.dart';
-import 'app_theme.dart';
 
 class ThemeCubit extends Cubit<ThemeData> {
   ThemeCubit() : super(darkTheme);

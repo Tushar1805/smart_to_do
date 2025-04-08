@@ -24,7 +24,7 @@ final GoRouter router = GoRouter(
     GoRoute(
       name: chatScreen,
       path: chatScreen,
-      builder: (final context, final state) =>  ChatScreen(),
+      builder: (final context, final state) => ChatScreen(),
     ),
   ],
 );
