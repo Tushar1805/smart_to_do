@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 ThemeData primaryTheme = ThemeData(
-  colorSchemeSeed: primarycolor,
+  colorSchemeSeed: primaryColor,
   brightness: Brightness.light,
   useMaterial3: true,
   // scaffoldBackgroundColor: lightBackgroundColorWhite,
@@ -87,7 +87,7 @@ ThemeData primaryTheme = ThemeData(
 final ThemeData darkTheme = ThemeData(
   // scaffoldBackgroundColor: darkBackGroundColor,
   // unselectedWidgetColor: Colors.white,
-  colorSchemeSeed: primarycolor,
+  colorSchemeSeed: primaryColor,
   brightness: Brightness.dark,
   useMaterial3: true,
   // appBarTheme: AppBarTheme(

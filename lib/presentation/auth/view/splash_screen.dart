@@ -27,7 +27,7 @@ class SplashScreen extends HookWidget {
     );
 
     return Scaffold(
-      backgroundColor: primarycolor,
+      backgroundColor: primaryColor,
       body: BlocListener(
         bloc: splashCubit,
         listener: (final context, final state) {
