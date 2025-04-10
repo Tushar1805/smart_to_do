@@ -1,4 +1,4 @@
-# mutual_funds_manager
+# Smart To do
 
 A new Flutter project.
 
