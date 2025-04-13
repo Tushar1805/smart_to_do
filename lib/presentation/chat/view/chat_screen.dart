@@ -3,7 +3,6 @@
 import 'package:chat_gpt_sdk/chat_gpt_sdk.dart';
 import 'package:core/di/service_locator.dart';
 import 'package:core/theme/app_colors.dart';
-import 'package:core/utils/core_utils.dart';
 import 'package:dash_chat_2/dash_chat_2.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -120,7 +119,6 @@ ${_messages.value?.map((final m) => '${m.user.firstName ?? m.user.id}: ${m.text}
 
       final response = await openAI.onChatCompletion(request: request);
 
-      customPrint('RESPONSE: ${response?.toJson().toString()}');
 
       // Handle response and ensure it's correct
       if (response != null && response.choices.isNotEmpty) {
