@@ -1,0 +1,2 @@
+F:/test project/smart_to_do_app/android/app/.cxx/Debug/58526b1d/armeabi-v7a/CMakeFiles/edit_cache.dir
+F:/test project/smart_to_do_app/android/app/.cxx/Debug/58526b1d/armeabi-v7a/CMakeFiles/rebuild_cache.dir

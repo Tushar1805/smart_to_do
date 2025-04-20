@@ -137,6 +137,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.8"
+  curved_navigation_bar:
+    dependency: transitive
+    description:
+      name: curved_navigation_bar
+      sha256: bb4ab128fcb6f4a9f0f1f72d227db531818b20218984789777f049fcbf919279
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.6"
   dash_chat_2:
     dependency: transitive
     description:
@@ -270,6 +278,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.4.1"
+  flutter_custom_clippers:
+    dependency: transitive
+    description:
+      name: flutter_custom_clippers
+      sha256: "473e3daf61c2a6cee0ad137393259a25223239d519a131c7ec1cac04d06e5407"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.1.0"
   flutter_hooks:
     dependency: transitive
     description:
@@ -432,6 +448,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.19.0"
+  intl_phone_field:
+    dependency: transitive
+    description:
+      name: intl_phone_field
+      sha256: "73819d3dfcb68d2c85663606f6842597c3ddf6688ac777f051b17814fe767bbf"
+      url: "https://pub.dev"
+    source: hosted
+    version: "3.2.0"
   js:
     dependency: transitive
     description:
@@ -512,13 +536,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.16.0"
-  smart_to_do_app:
-    dependency: "direct main"
-    description:
-      path: ".."
-      relative: true
-    source: path
-    version: "1.0.0+1"
   nested:
     dependency: transitive
     description:
@@ -652,6 +669,13 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  smart_to_do_app:
+    dependency: "direct main"
+    description:
+      path: ".."
+      relative: true
+    source: path
+    version: "1.0.0+1"
   source_span:
     dependency: transitive
     description:

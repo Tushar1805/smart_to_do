@@ -271,7 +271,7 @@ ${_messages.value?.map((final m) => '${m.user.firstName ?? m.user.id}: ${m.text}
                     ),
                 inputToolbarStyle: BoxDecoration(
                   color: Theme.of(context).brightness == Brightness.light
-                      ? darkBackGroundColor
+                      ? backgroundColor
                       : colorScheme.primaryFixedDim,
                   borderRadius: BorderRadius.circular(12),
                 ),

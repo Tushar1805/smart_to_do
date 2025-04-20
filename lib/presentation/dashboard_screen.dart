@@ -49,7 +49,7 @@ class DashboardScreen extends HookWidget {
     }
 
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: backgroundColor,
       // appBar: AppBar(
       //   title: Text(
       //     appTitle,
@@ -72,18 +72,20 @@ class DashboardScreen extends HookWidget {
       //     ),
       //   ],
       // ),
-      body: AnimatedSwitcher(
-        duration: const Duration(milliseconds: 300),
-        transitionBuilder: (final Widget child, final Animation<double> animation) {
-          return SlideTransition(
-            position: Tween<Offset>(
-              begin: const Offset(0.0, 1.0),
-              end: Offset.zero,
-            ).animate(animation),
-            child: child,
-          );
-        },
-        child: _buildPage(pageIndex.value), // This must return a different widget instance
+      body: SafeArea(
+        child: AnimatedSwitcher(
+          duration: const Duration(milliseconds: 300),
+          transitionBuilder: (final Widget child, final Animation<double> animation) {
+            return SlideTransition(
+              position: Tween<Offset>(
+                begin: const Offset(0.0, 1.0),
+                end: Offset.zero,
+              ).animate(animation),
+              child: child,
+            );
+          },
+          child: _buildPage(pageIndex.value), // This must return a different widget instance
+        ),
       ),
       // SafeArea(
       //   child: screens[pageIndex.value],
@@ -105,47 +107,68 @@ class DashboardScreen extends HookWidget {
         ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      bottomNavigationBar: ClipRRect(
-        borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(30),
-          topRight: Radius.circular(30),
-        ),
-        child: BottomAppBar(
-          elevation: 10,
-          clipBehavior: Clip.antiAlias,
-          shape: CircularNotchedRectangle(),
-          color: primaryContainerColor,
-          notchMargin: 12.0,
-          child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                navButton(
-                  iconPath: dashboardIcon,
-                  isSelected: pageIndex.value == 0,
-                  onTap: () => onItemTapped(0),
-                ),
-                navButton(
-                  iconPath: calendarIcon,
-                  isSelected: pageIndex.value == 1,
-                  onTap: () => onItemTapped(1),
-                ),
-                SizedBox(width: 48),
-                navButton(
-                  iconPath: chatIcon,
-                  isSelected: pageIndex.value == 2,
-                  onTap: () => onItemTapped(2),
-                ),
-                navButton(
-                  iconPath: profileIcon,
-                  isSelected: pageIndex.value == 3,
-                  onTap: () => onItemTapped(3),
-                ),
-              ],
+      bottomNavigationBar: Stack(
+        children: [
+          //* Shadow Layer
+          Positioned(
+            left: 0,
+            right: 0,
+            bottom: 15,
+            child: Container(
+              height: 80,
+              decoration: BoxDecoration(
+                boxShadow: const [
+                  BoxShadow(
+                    blurRadius: 42,
+                    spreadRadius: 20,
+                  ),
+                ],
+              ),
             ),
           ),
-        ),
+          //* Actual Nav Bar
+          ClipRRect(
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(30),
+              topRight: Radius.circular(30),
+            ),
+            child: BottomAppBar(
+              elevation: 0,
+              shape: CircularNotchedRectangle(),
+              color: primaryContainerColor,
+              notchMargin: 12.0,
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    navButton(
+                      iconPath: dashboardIcon,
+                      isSelected: pageIndex.value == 0,
+                      onTap: () => onItemTapped(0),
+                    ),
+                    navButton(
+                      iconPath: calendarIcon,
+                      isSelected: pageIndex.value == 1,
+                      onTap: () => onItemTapped(1),
+                    ),
+                    SizedBox(width: 48),
+                    navButton(
+                      iconPath: chatIcon,
+                      isSelected: pageIndex.value == 2,
+                      onTap: () => onItemTapped(2),
+                    ),
+                    navButton(
+                      iconPath: profileIcon,
+                      isSelected: pageIndex.value == 3,
+                      onTap: () => onItemTapped(3),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ],
       ),
 
       //* Curved navigation bar

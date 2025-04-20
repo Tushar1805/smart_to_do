@@ -90,7 +90,7 @@ ThemeData primaryTheme = ThemeData(
   ),
 );
 final ThemeData darkTheme = ThemeData(
-  // scaffoldBackgroundColor: darkBackGroundColor,
+  scaffoldBackgroundColor: backgroundColor,
   // unselectedWidgetColor: Colors.white,
   colorSchemeSeed: primaryColor,
   brightness: Brightness.dark,
@@ -171,7 +171,7 @@ final ThemeData darkTheme = ThemeData(
     ),
     displayMedium: GoogleFonts.karla(
       fontSize: 15,
-      fontWeight: FontWeight.w400,
+      fontWeight: FontWeight.w600,
       color: Colors.white,
     ),
     displaySmall: GoogleFonts.karla(

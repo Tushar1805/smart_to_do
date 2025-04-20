@@ -7,3 +7,6 @@ const dashboardIcon = 'assets/dashboard_icon.svg';
 const calendarIcon = 'assets/calendar_icon.svg';
 const chatIcon = 'assets/chat_icon.svg';
 const profileIcon = 'assets/profile_icon.svg';
+const mobilePic = 'assets/mobile.png';
+const wireframePic = 'assets/bulb.png';
+const websitePic = 'assets/website.png';
