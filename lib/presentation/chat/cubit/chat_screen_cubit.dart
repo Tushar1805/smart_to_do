@@ -1,7 +1,7 @@
 import 'package:core/baseCubit/base_cubit.dart';
 import 'package:core/utils/core_utils.dart';
-import 'package:mutual_funds_manager/presentation/chat/repository/chat_screen_repository.dart';
-import 'package:mutual_funds_manager/presentation/chat/states/chat_screen_states.dart';
+import 'package:smart_to_do_app/presentation/chat/repository/chat_screen_repository.dart';
+import 'package:smart_to_do_app/presentation/chat/states/chat_screen_states.dart';
 
 class ChatScreenCubit extends BaseCubit {
   ChatScreenCubit(this._chatScreenRepository);

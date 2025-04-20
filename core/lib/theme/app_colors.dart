@@ -6,13 +6,16 @@ Color lightBackgroundColorWhite = HexColor.fromHex('#00000');
 Color containerBackgroundColor = HexColor.fromHex('#0070df');
 Color darkBackGroundColor = HexColor.fromHex('#041A2D');
 Color primaryColor = HexColor.fromHex('#112B3F');
+// Color primaryColor = HexColor.fromHex('#561048');
 // Color primarycolor = HexColor.fromHex('#041a2d');
 Color secondaryColor = HexColor.fromHex('#041729');
 Color darkThemeSecondaryColor = HexColor.fromHex('#75E6DA');
+Color primaryContainerColor = HexColor.fromHex('#232323');
 
 final colorScheme = ColorScheme.fromSeed(seedColor: primaryColor);
 
 Color primary = colorScheme.primary;
+Color primaryFixedDim = colorScheme.primaryFixedDim;
 Color onPrimary = colorScheme.onPrimary;
 Color secondary = colorScheme.secondary;
 Color onSecondary = colorScheme.onSecondary;

@@ -90,12 +90,12 @@ BEGIN
         BLOCK "040904e4"
         BEGIN
             VALUE "CompanyName", "com.example" "\0"
-            VALUE "FileDescription", "mutual_funds_manager" "\0"
+            VALUE "FileDescription", "smart_to_do_app" "\0"
             VALUE "FileVersion", VERSION_AS_STRING "\0"
-            VALUE "InternalName", "mutual_funds_manager" "\0"
+            VALUE "InternalName", "smart_to_do_app" "\0"
             VALUE "LegalCopyright", "Copyright (C) 2025 com.example. All rights reserved." "\0"
-            VALUE "OriginalFilename", "mutual_funds_manager.exe" "\0"
-            VALUE "ProductName", "mutual_funds_manager" "\0"
+            VALUE "OriginalFilename", "smart_to_do_app.exe" "\0"
+            VALUE "ProductName", "smart_to_do_app" "\0"
             VALUE "ProductVersion", VERSION_AS_STRING "\0"
         END
     END

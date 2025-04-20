@@ -1,7 +1,7 @@
 // ignore_for_file: inference_failure_on_collection_literal
 
 import 'package:core/baseCubit/base_cubit.dart';
-import 'package:mutual_funds_manager/presentation/auth/states/splash_states.dart';
+import 'package:smart_to_do_app/presentation/auth/states/splash_states.dart';
 
 class SplashCubit extends BaseCubit {
   void splashTime() {

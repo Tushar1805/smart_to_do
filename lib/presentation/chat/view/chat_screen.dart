@@ -8,11 +8,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:mutual_funds_manager/presentation/chat/cubit/chat_screen_cubit.dart';
-import 'package:mutual_funds_manager/presentation/chat/model/chat_response_model.dart';
-import 'package:mutual_funds_manager/presentation/chat/states/chat_screen_states.dart';
-import 'package:mutual_funds_manager/resources/app_api_keys.dart';
-import 'package:mutual_funds_manager/resources/app_image.dart';
+import 'package:smart_to_do_app/presentation/chat/cubit/chat_screen_cubit.dart';
+import 'package:smart_to_do_app/presentation/chat/model/chat_response_model.dart';
+import 'package:smart_to_do_app/presentation/chat/states/chat_screen_states.dart';
+import 'package:smart_to_do_app/resources/app_api_keys.dart';
+import 'package:smart_to_do_app/resources/app_image.dart';
 
 class ChatScreen extends HookWidget {
   ChatScreen({super.key});
@@ -118,7 +118,6 @@ ${_messages.value?.map((final m) => '${m.user.firstName ?? m.user.id}: ${m.text}
       );
 
       final response = await openAI.onChatCompletion(request: request);
-
 
       // Handle response and ensure it's correct
       if (response != null && response.choices.isNotEmpty) {

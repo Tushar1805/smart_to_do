@@ -1,4 +1,4 @@
-package com.example.mutual_funds_manager
+package com.example.smart_to_do_app
 
 import io.flutter.embedding.android.FlutterActivity
 

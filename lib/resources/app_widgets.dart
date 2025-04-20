@@ -1,4 +1,7 @@
+import 'package:core/theme/app_colors.dart';
+import 'package:core/utils/core_utils.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 final _txtWord = TextEditingController();
 
@@ -67,3 +70,64 @@ final heroCard = BoxDecoration(
     ),
   ],
 );
+
+class CustomGenericButton extends StatelessWidget {
+  const CustomGenericButton({
+    required this.title,
+    required this.onTap,
+    required this.minWidth,
+    required this.height,
+    this.loader,
+    super.key,
+  });
+
+  final String title;
+  final VoidCallback onTap;
+  final double? minWidth;
+  final double? height;
+  final bool? loader;
+
+  @override
+  Widget build(final BuildContext context) => Padding(
+        padding: const EdgeInsets.only(top: 20),
+        child: MaterialButton(
+          highlightElevation: 10,
+          highlightColor: Theme.of(context).brightness == Brightness.light
+              ? Colors.white
+              : colorScheme.onPrimaryFixedVariant,
+          minWidth: minWidth,
+          color: colorScheme.onPrimaryFixedVariant,
+          onPressed: onTap.call,
+          height: height,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(40),
+          ),
+          child: (loader ?? false)
+              ? LoadingWithoutText()
+              : Text(
+                  title,
+                  style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+                        fontSize: 16,
+                        color: Colors.white,
+                      ),
+                ),
+        ),
+      );
+}
+
+Widget navButton({
+  required final String iconPath,
+  required final bool isSelected,
+  required final VoidCallback onTap,
+}) =>
+    IconButton(
+      icon: SvgPicture.asset(
+        iconPath,
+        colorFilter: ColorFilter.mode(
+          isSelected ? primaryFixedDim : Colors.white,
+          BlendMode.srcIn,
+        ),
+        height: 30,
+      ),
+      onPressed: onTap,
+    );

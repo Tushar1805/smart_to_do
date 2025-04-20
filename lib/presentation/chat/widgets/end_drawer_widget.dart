@@ -1,6 +1,6 @@
 import 'package:core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
-import 'package:mutual_funds_manager/presentation/chat/model/chat_response_model.dart';
+import 'package:smart_to_do_app/presentation/chat/model/chat_response_model.dart';
 
 Widget endDrawer({
   required final Size size,

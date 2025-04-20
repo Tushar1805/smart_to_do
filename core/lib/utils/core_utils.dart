@@ -75,3 +75,18 @@ void showIOSAlertDialog(final BuildContext context,
 void popDialog(final BuildContext context) {
   Navigator.pop(context);
 }
+
+class LoadingWithoutText extends StatelessWidget {
+  const LoadingWithoutText({final Key? key}) : super(key: key);
+
+  @override
+  Widget build(final BuildContext context) => Center(
+        child: CircularProgressIndicator(
+          valueColor: AlwaysStoppedAnimation<Color>(
+            Theme.of(context).brightness == Brightness.light
+                ? Theme.of(context).primaryColor
+                : Colors.white,
+          ),
+        ),
+      );
+}

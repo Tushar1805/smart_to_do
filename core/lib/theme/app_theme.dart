@@ -82,6 +82,11 @@ ThemeData primaryTheme = ThemeData(
       fontWeight: FontWeight.w400,
       color: Colors.black,
     ),
+    displayLarge: GoogleFonts.karla(
+      fontSize: 22,
+      fontWeight: FontWeight.w400,
+      color: Colors.black,
+    ),
   ),
 );
 final ThemeData darkTheme = ThemeData(
@@ -171,6 +176,11 @@ final ThemeData darkTheme = ThemeData(
     ),
     displaySmall: GoogleFonts.karla(
       fontSize: 14,
+      fontWeight: FontWeight.w400,
+      color: Colors.white,
+    ),
+    displayLarge: GoogleFonts.karla(
+      fontSize: 30,
       fontWeight: FontWeight.w400,
       color: Colors.white,
     ),

@@ -39,7 +39,7 @@ include CMakeFiles/rules.ninja
 # Utility command for edit_cache
 
 build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D "F:\test project\mutual_funds_manager\android\app\.cxx\Debug\1z2717t1\armeabi-v7a" && C:\Android\SDK\cmake\3.18.1\bin\cmake.exe -E echo "No interactive CMake dialog available.""
+  COMMAND = cmd.exe /C "cd /D "F:\test project\smart_to_do_app\android\app\.cxx\Debug\1z2717t1\armeabi-v7a" && C:\Android\SDK\cmake\3.18.1\bin\cmake.exe -E echo "No interactive CMake dialog available.""
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -50,7 +50,7 @@ build edit_cache: phony CMakeFiles/edit_cache.util
 # Utility command for rebuild_cache
 
 build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D "F:\test project\mutual_funds_manager\android\app\.cxx\Debug\1z2717t1\armeabi-v7a" && C:\Android\SDK\cmake\3.18.1\bin\cmake.exe --regenerate-during-build -SC:\Users\HP\fvm\versions\3.29.0\packages\flutter_tools\gradle\src\main\groovy -B"F:\test project\mutual_funds_manager\android\app\.cxx\Debug\1z2717t1\armeabi-v7a""
+  COMMAND = cmd.exe /C "cd /D "F:\test project\smart_to_do_app\android\app\.cxx\Debug\1z2717t1\armeabi-v7a" && C:\Android\SDK\cmake\3.18.1\bin\cmake.exe --regenerate-during-build -SC:\Users\HP\fvm\versions\3.29.0\packages\flutter_tools\gradle\src\main\groovy -B"F:\test project\smart_to_do_app\android\app\.cxx\Debug\1z2717t1\armeabi-v7a""
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -66,7 +66,7 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # =============================================================================
 
 #############################################
-# Folder: F:/test project/mutual_funds_manager/android/app/.cxx/Debug/1z2717t1/armeabi-v7a
+# Folder: F:/test project/smart_to_do_app/android/app/.cxx/Debug/1z2717t1/armeabi-v7a
 
 build all: phony
 

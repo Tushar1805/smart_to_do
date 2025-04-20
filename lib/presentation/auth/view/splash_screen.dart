@@ -6,10 +6,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
-import 'package:mutual_funds_manager/navigation/app_routes.dart';
-import 'package:mutual_funds_manager/presentation/auth/cubit/splash_cubit.dart';
-import 'package:mutual_funds_manager/presentation/auth/states/splash_states.dart';
-import 'package:mutual_funds_manager/resources/app_image.dart';
+import 'package:smart_to_do_app/navigation/app_routes.dart';
+import 'package:smart_to_do_app/presentation/auth/cubit/splash_cubit.dart';
+import 'package:smart_to_do_app/presentation/auth/states/splash_states.dart';
+import 'package:smart_to_do_app/resources/app_image.dart';
 
 class SplashScreen extends HookWidget {
   const SplashScreen({super.key});
@@ -32,7 +32,8 @@ class SplashScreen extends HookWidget {
         bloc: splashCubit,
         listener: (final context, final state) {
           if (state is SplashLoadedState) {
-            context.goNamed(homeScreen);
+            // context.goNamed(loginScreen);
+            context.goNamed(dashboardScreen);
           }
         },
         child: Center(

@@ -1,87 +1,49 @@
-import 'package:core/di/service_locator.dart';
-import 'package:core/theme/theme_cubit.dart';
+import 'package:core/theme/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_hooks/flutter_hooks.dart';
-import 'package:go_router/go_router.dart';
-import 'package:mutual_funds_manager/navigation/app_routes.dart';
-import 'package:mutual_funds_manager/resources/app_strings.dart';
 
 class HomeScreen extends HookWidget {
   const HomeScreen({super.key});
+
   @override
   Widget build(final BuildContext context) {
-    final counter = useState<int>(0);
-    final darkTheme = useState<bool>(true);
-
-    final themeCubit = sl<ThemeCubit>();
-
-    void incrementCounter() {
-      counter.value++;
-    }
-
+    final size = MediaQuery.of(context).size;
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          appTitle,
-          style: Theme.of(context).textTheme.bodyMedium,
-        ),
-        actions: [
-          Text(
-            darkTheme.value ? 'Light Theme' : 'Dark Theme',
-            style: Theme.of(context).textTheme.displaySmall,
-          ),
-          const SizedBox(
-            width: 5,
-          ),
-          Switch(
-            value: darkTheme.value,
-            onChanged: (final _) {
-              darkTheme.value = !darkTheme.value;
-              themeCubit.toggleTheme();
-            },
-          ),
-        ],
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '${counter.value}',
-              style: Theme.of(context).textTheme.bodyMedium,
-            ),
-            TextButton(
-              onPressed: () {
-                context.pushNamed(chatScreen);
-              },
-              style: ButtonStyle(
-                overlayColor: WidgetStateProperty.all(Colors.transparent), // Removes tap effect
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
+      body: Container(
+          padding: EdgeInsets.symmetric(horizontal: 15),
+          child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+            RichText(
+              text: TextSpan(
+                text: 'Hello',
+                style: Theme.of(context).textTheme.bodyLarge?.copyWith(color: primaryFixedDim),
                 children: [
-                  Text(
-                    'Chat Screen',
-                    style: Theme.of(context).textTheme.bodyMedium,
+                  TextSpan(
+                    text: ' Tushar 👋',
+                    style: Theme.of(context)
+                        .textTheme
+                        .bodyLarge
+                        ?.copyWith(fontWeight: FontWeight.w900, fontSize: 22),
                   ),
-                  const SizedBox(
-                    width: 5,
-                  ),
-                  const Icon(Icons.arrow_forward_outlined),
                 ],
               ),
+              textScaler: TextScaler.linear(1.1),
             ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ),
+            SizedBox(
+              height: 10,
+            ),
+            SizedBox(
+              width: size.width * 0.8,
+              child: Text(
+                'Manage Your Daily Tasks',
+                style: Theme.of(context)
+                    .textTheme
+                    .displayLarge
+                    ?.copyWith(fontSize: 45, fontFamily: 'Sans'),
+                // textScaler: TextScaler.linear(0.8),
+                textAlign: TextAlign.left,
+              ),
+            )
+          ])),
     );
   }
 }
