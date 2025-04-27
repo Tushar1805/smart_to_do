@@ -32,7 +32,9 @@ jobs:
 
     - name: Restore app_api_keys.dart
       run: |
-        mkdir lib\resources
+        if (-not (Test-Path lib\resources)) {
+          mkdir lib\resources
+        }
         echo $env:API_KEY > lib\resources\app_api_keys.dart
       shell: pwsh
       env:
